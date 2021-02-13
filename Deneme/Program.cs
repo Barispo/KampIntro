@@ -2,41 +2,22 @@
 
 namespace Deneme
 {
-    class Program
+    public class RefOutExample
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Sabit sabit_Bilgiler1 = new Sabit ();
-            sabit_Bilgiler1.Adi = "Barış";
-            sabit_Bilgiler1.Soyadi = "PİŞMİŞOĞLU";
-            sabit_Bilgiler1.Yasi = 47;
-            sabit_Bilgiler1.AldigiNot = 89;
+            int originalValue = 43;
 
-            Sabit [] sabit_Bilgiler = new Sabit [] { sabit_Bilgiler1 };
-            foreach (var SB in sabit_Bilgiler)
-            {
-                Console.WriteLine("Öğrencinin Adı / Soyadı : " + SB.Adi+ "/"+ SB.Soyadi);
-                Console.WriteLine("Öğrencinin Yaşı / Notu : " + SB.Yasi + "/" + SB.AldigiNot);
-            }
-            
+            Console.WriteLine("ChangeMethod'dan önce: " + originalValue);//Output 43
 
+            ChangeMethod(1, 3, ref originalValue);
 
+            Console.WriteLine("ChangeMethod'dan sonra: " + originalValue); //Output 47
         }
 
-
-
-
-
+        static void ChangeMethod(int x, int y, ref int i)
+        {
+            i = i + x + y;//47
+        }
     }
-    class Sabit
-    {
-        public string Adi { get; set; }
-        public string Soyadi { get; set; }
-        public int Yasi { get; set; }
-        public int AldigiNot { get; set; }
-
-    }
-
-
-
 }

@@ -25,7 +25,7 @@ namespace KampIntro
             }
             else if (dolarDun < dolarBugun)
             {
-                Console.WriteLine("Aartış Oku");
+                Console.WriteLine("Artış Oku");
             }
             else
             {
